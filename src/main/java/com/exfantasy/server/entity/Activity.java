@@ -60,7 +60,7 @@ public class Activity {
      * 參與活動的使用者
      */
 	@ApiModelProperty(notes = "參與活動的使用者", required = false)
-    private List<Long> joinedUserIds;
+    private List<User> joinedUsers;
     /**
      * 活動的留言
      */

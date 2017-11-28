@@ -6,6 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.exfantasy.server.cnst.ResultCode;
@@ -54,4 +55,22 @@ public class ActivityController {
 		activityService.createActivity(activity);
 		return new RespCommon(ResultCode.SUCCESS, "Create activiy succeed");
 	}
+	
+	/**
+	 * <pre>
+	 * 參加活動
+	 * </pre>
+	 * 
+	 * @param userId
+	 * @param activityId
+	 * @return
+	 */
+	@ApiOperation(value = "參加活動")
+	@RequestMapping(value = "/join", method = RequestMethod.PUT)
+	@ResponseBody
+	public RespCommon joinActivity(@RequestParam("userId") Long userId, @RequestParam("activityId") Long activityId) {
+		activityService.join(userId, activityId);
+		return new RespCommon(ResultCode.SUCCESS, "Join activiy succeed");
+	}
+	
 }
