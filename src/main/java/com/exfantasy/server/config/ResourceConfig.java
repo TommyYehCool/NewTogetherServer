@@ -6,7 +6,7 @@ import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
 /**
- * ©w¸q¬Y­Óºô§}¹ïÀ³¨ì¹q¸£ªº¬Y­Ó¸ê®Æ§¨
+ * å®šç¾©æŸå€‹ç¶²å€å°æ‡‰åˆ°é›»è…¦çš„æŸå€‹è³‡æ–™å¤¾
  * 
  * @author Tommy
  */
@@ -30,8 +30,8 @@ public class ResourceConfig extends WebMvcConfigurerAdapter {
 //		for (UserEntity user : allUsers) {
 //			String userEmail = user.getEmail();
 //			
-//			// FIXME ³oÃä¦A¬İ¬İ­n¤£­n¥Î­Ó¶Ã½X¨ú¥N userEmail, §K±o³Q¯}¸Ñ
-//			// FIXME ÁÙ¦³­n¦Ò¼{·sµù¥Uªº­n«ç»ò¥[ ResourceHandlerRegistry
+//			// FIXME ï¿½oï¿½ï¿½Aï¿½İ¬İ­nï¿½ï¿½ï¿½nï¿½Î­Ó¶Ã½Xï¿½ï¿½ï¿½N userEmail, ï¿½Kï¿½oï¿½Qï¿½}ï¿½ï¿½
+//			// FIXME ï¿½Ù¦ï¿½ï¿½nï¿½Ò¼{ï¿½sï¿½ï¿½ï¿½Uï¿½ï¿½ï¿½nï¿½ï¿½ï¿½[ ResourceHandlerRegistry
 //			String userFolderPath = STORE_FILE_PATH + userEmail + "/";
 //			File userFolder = new File(userFolderPath);
 //			if (!userFolder.isDirectory()) {
