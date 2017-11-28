@@ -10,7 +10,7 @@
 
 	<body>
 		<h1>新增活動</h1>
-	    <form action="#" th:action="@{/activity/create-from-web}" th:object="${activity}" method="post">
+	    <form action="#" th:action="@{/activity/create}" th:object="${activity}" method="post">
 	    	<div class="form-group">
 	    		<label for="inputCreateUserId">建立使用者ID</label> 
 	    		<input type="text" class="form-control" id="inputCreateUserId" placeholder="Enter create user ID" th:field="*{createUserId}" />
