@@ -20,22 +20,22 @@ public class Activity {
      */
 	@Id
 	@ApiModelProperty(notes = "活動 ID", required = false)
-    private long id;
+    private Long id;
     /**
      * 建立活動使用者 ID
      */
 	@ApiModelProperty(notes = "建立活動使用者 ID", required = true)
-    private long createUserId;
+    private Long createUserId;
     /**
      * 緯度
      */
 	@ApiModelProperty(notes = "緯度", required = true)
-    private double latitude;
+    private Float latitude;
     /**
      * 經度
      */
 	@ApiModelProperty(notes = "經度", required = true)
-    private double longitude;
+    private Float longitude;
     /**
      * 活動名稱
      */
@@ -50,12 +50,12 @@ public class Activity {
      * 參加人數
      */
 	@ApiModelProperty(notes = "參加人數", required = true)
-    private int attendeeNum;
+    private Integer attendeeNum;
     /**
      * 活動日期及時間
      */
 	@ApiModelProperty(notes = "活動日期及時間", required = true)
-    private int datetime;
+    private Integer datetime;
     /**
      * 參與活動的使用者
      */

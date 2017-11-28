@@ -30,8 +30,8 @@ public class ResourceConfig extends WebMvcConfigurerAdapter {
 //		for (UserEntity user : allUsers) {
 //			String userEmail = user.getEmail();
 //			
-//			// FIXME �o��A�ݬݭn���n�έӶýX���N userEmail, �K�o�Q�}��
-//			// FIXME �٦��n�Ҽ{�s���U���n���[ ResourceHandlerRegistry
+//			// FIXME 這邊再看看要不要用個亂碼取代 userEmail, 免得被破解
+//			// FIXME 還有要考慮新註冊的要怎麼加 ResourceHandlerRegistry
 //			String userFolderPath = STORE_FILE_PATH + userEmail + "/";
 //			File userFolder = new File(userFolderPath);
 //			if (!userFolder.isDirectory()) {

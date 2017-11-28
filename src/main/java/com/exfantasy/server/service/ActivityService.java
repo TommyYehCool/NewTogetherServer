@@ -144,4 +144,17 @@ public class ActivityService {
 		logger.info("<<<<< User with id: <{}> join activity with id: <{}> succeed", joinUserId, activityId);
 	}
 
+	/**
+	 * <pre>
+	 * TODO 查詢所在位置附近的活動
+	 * </pre>
+	 * 
+	 * @param latitude
+	 * @param longitude
+	 * @return
+	 */
+	public List<Activity> nearby(double latitude, double longitude) {
+		return null;
+	}
+
 }

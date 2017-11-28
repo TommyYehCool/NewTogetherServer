@@ -53,7 +53,7 @@ public class UserController {
 	@ResponseBody
 	public RespCommon register(@ModelAttribute User user) {
 		userService.register(user);
-		return new RespCommon(ResultCode.SUCCESS, "Register user succeed");
+		return new RespCommon(ResultCode.SUCCESS);
 	}
 	
 	/**
@@ -67,7 +67,9 @@ public class UserController {
 	@ApiOperation(value = "使用 Email 查詢使用者")
 	@RequestMapping(value = "/find-by-email", method = RequestMethod.GET)
 	@ResponseBody
-	public User findByEmail(@RequestParam("email") String email) {
-		return userService.findByEmail(email);
+	public RespCommon findByEmail(@RequestParam("email") String email) {
+		User user = userService.findByEmail(email);
+		return new RespCommon(ResultCode.SUCCESS, user);
 	}
+
 }

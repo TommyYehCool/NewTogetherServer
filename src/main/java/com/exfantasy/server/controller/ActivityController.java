@@ -1,5 +1,7 @@
 package com.exfantasy.server.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -53,7 +55,7 @@ public class ActivityController {
 	@ResponseBody
 	public RespCommon createActivity(@ModelAttribute Activity activity) {
 		activityService.createActivity(activity);
-		return new RespCommon(ResultCode.SUCCESS, "Create activiy succeed");
+		return new RespCommon(ResultCode.SUCCESS);
 	}
 	
 	/**
@@ -70,7 +72,7 @@ public class ActivityController {
 	@ResponseBody
 	public RespCommon joinActivity(@RequestParam("activityId") Long activityId, @RequestParam("userId") Long userId) {
 		activityService.join(activityId, userId);
-		return new RespCommon(ResultCode.SUCCESS, "Join activiy succeed");
+		return new RespCommon(ResultCode.SUCCESS);
 	}
 	
 	/**
@@ -88,6 +90,23 @@ public class ActivityController {
 	@ResponseBody
 	public RespCommon leaveMessage(@RequestParam("activityId") Long activityId, @RequestParam("username") String username, @RequestParam("message") String message) {
 		activityService.leaveMessage(activityId, username, message);
-		return new RespCommon(ResultCode.SUCCESS, "Leave message succeed");
+		return new RespCommon(ResultCode.SUCCESS);
+	}
+	
+	/**
+	 * <pre>
+	 * 查詢所在位置附近的活動
+	 * </pre> 
+	 * 
+	 * @param latitude
+	 * @param longitude
+	 * @return
+	 */
+	@ApiOperation(value = "查詢所在位置附近的活動")
+	@RequestMapping(value = "/nearby", method = RequestMethod.GET)
+	@ResponseBody
+	public RespCommon nearby(@RequestParam("latitude") double latitude, @RequestParam("longitude") double longitude) {
+		List<Activity> activities = activityService.nearby(latitude, longitude);
+		return new RespCommon(ResultCode.SUCCESS, activities);
 	}
 }
