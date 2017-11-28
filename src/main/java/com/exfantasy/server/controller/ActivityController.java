@@ -4,7 +4,6 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -26,21 +25,6 @@ public class ActivityController {
 
 	@Autowired
 	private ActivityService activityService;
-
-	/**
-	 * <pre>
-	 * 取得活動頁面
-	 * </pre>
-	 * 
-	 * @param model
-	 * @return
-	 */
-	@ApiOperation(value = "取得活動頁面")
-	@RequestMapping(method = RequestMethod.GET)
-	public String returnEventPage(Model model) {
-		model.addAttribute("activity", new Activity());
-		return "activity";
-	}
 
 	/**
 	 * <pre>

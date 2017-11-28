@@ -9,34 +9,36 @@
 	</head>
 
 	<body>
+
 		<h1>註冊</h1>
 		<form action="#" th:action="@{/user/register}" th:object="${user}" method="post">
 			<div class="form-group">
-				<label for="inputEmail">Email address</label>
+				<label for="inputEmail">Email</label>
 				<input type="text" class="form-control" id="inputEmail" placeholder="Enter email" th:field="*{email}" />
 			</div>
 			<div class="form-group">
-				<label for="inputPwd">Password</label>
+				<label for="inputPwd">密碼</label>
 				<input type="password" class="form-control" id="inputPwd" placeholder="Enter password" th:field="*{password}" />
 			</div>
 			<div class="form-group">
-				<label for="inputName">Name</label>
+				<label for="inputName">名稱</label>
 				<input type="text" class="form-control" id="inputName" placeholder="Enter name" th:field="*{name}" />
 			</div>
 	
-			<button type="submit" class="btn btn-default">Submit</button>
-			<button type="reset" class="btn btn-default">Reset</button>
-	
+			<button type="submit" class="btn btn-default">註冊</button>
+			<button type="reset" class="btn btn-default">清除</button>
 		</form>
 	
 		<h1>查詢</h1>
 		<form action="#" th:action="@{/user/find-by-email}" method="get">
 			<div class="form-group">
-				<label for="inputQryEmail">Email address</label>
+				<label for="inputQryEmail">Email</label>
 				<input type="text" class="form-control" id="inputQryEmail" name="email" placeholder="Enter email" />
 			</div>
-			<button type="submit" class="btn btn-default">Submit</button>
-			<button type="reset" class="btn btn-default">Reset</button>
+			<button type="submit" class="btn btn-default">查詢</button>
+			<button type="reset" class="btn btn-default">清除</button>
 		</form>
+
 	</body>
+
 </html>

@@ -9,6 +9,7 @@
 	</head>
 
 	<body>
+
 		<h1>新增活動</h1>
 	    <form action="#" th:action="@{/activity/create}" th:object="${activity}" method="post">
 	    	<div class="form-group">
@@ -41,8 +42,9 @@
 	        	<input type="text" class="form-control" id="inputAttendeeNum" placeholder="Enter number of people" th:field="*{attendeeNum}" />
 	        </div>
 	        
-	        <button type="submit" class="btn btn-defaule">Submit</button> 
-	        <button type="reset" class="btn btn-default">Reset</button>
+	        <button type="submit" class="btn btn-defaule">新增</button> 
+	        <button type="reset" class="btn btn-default">清除</button>
 	    </form>
+
 	</body>
 </html>

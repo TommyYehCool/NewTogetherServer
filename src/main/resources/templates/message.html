@@ -4,25 +4,34 @@
 	<div th:include="fragments/js :: bootstrap"></div>
 
 	<head>
-		<title>Event</title>
+		<title>留言</title>
   		<object th:include="fragments/header :: common_header" th:remove="tag" ></object>
 	</head>
 
 	<body>
-		<h1>�d��</h1>
-	    <form action="#" th:action="@{/message/leave-from-web}" th:object="${message}" method="post">
+
+		<h1>留言</h1>
+	    <form action="#" th:action="@{/activity/leave-message}" method="post">
 	    	<div class="form-group">
-	    		<label for="inputCreateUserId">�إߨϥΪ�ID</label> 
-	    		<input type="text" class="form-control" id="inputCreateUserId" placeholder="Enter create user ID" th:field="*{createUserId}" />
+	    		<label for="inputActivityId">活動 ID</label> 
+	    		<input type="text" class="form-control" id="inputActivityId" placeholder="Enter activity id" name="activityId" />
+	    	</div>
+	    
+	    	<div class="form-group">
+	    		<label for="inputUsername">名稱</label> 
+	    		<input type="text" class="form-control" id="inputUsername" placeholder="Enter your name" name="username" />
 	    	</div>
 	    	
 	    	<div class="form-group">
-  				<label for="inputContent">���e</label>
-  				<textarea class="form-control" rows="5" id="inputContent" th:field="*{content}"></textarea>
+  				<label for="inputMessage">訊息</label>
+  				<textarea class="form-control" rows="5" id="inputMessage" name="message"></textarea>
 			</div>
 	    
-	        <button type="submit" class="btn btn-defaule">Submit</button> 
-	        <button type="reset" class="btn btn-default">Reset</button>
+	        <button type="submit" class="btn btn-default">留言</button>
+	        <button type="reset" class="btn btn-default">清除</button>
+	        <input type="hidden" name="_method" value="put" />
 	    </form>
+
 	</body>
+
 </html>
