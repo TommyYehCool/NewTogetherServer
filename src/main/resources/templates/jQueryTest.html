@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Handling Form Submission</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script>
+    $(document).ready(function () {
+    	var formData = {name:"ravi",age:"31"}; //Array 
+    	
+    	$("#queryBtn").click(function(){
+    		send(formData);
+    	});
+    
+    });
+    
+    function send(formData){
+		$.ajax({
+    		url : "./jQueryTest/ajax",
+    		type: "POST",
+    		data : formData,
+    		dataType:'text',
+    		success: function(response)
+    		{
+    			alert("jQuery " + response);
+    		},
+    		error: function (xhr, ajaxOptions, thrownError)
+    		{
+    			alert(xhr.status); 
+                alert(thrownError);
+    		}
+		});
+	}
+    </script>
+</head>
+<body>
+	<h1>test</h1>
+    <form>
+        <p><input id="queryBtn" value="test" type="button" /></p>
+    </form>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+	<div th:include="fragments/js :: jquerys"></div>
+	<div th:include="fragments/js :: bootstrap"></div>
+
+	<head>
+		<title>廣播</title>
+  		<object th:include="fragments/header :: common_header" th:remove="tag" ></object>
+	</head>
+
+	<body>
+		<h1>發送廣播訊息</h1>
+	    <form action="#" th:action="@{/gcm/send}" method="post">
+	    	<div class="form-group">
+	    		<label for="inputTopic">Topic</label> 
+	    		<input type="text" class="form-control" id="inputTopic" name="topic" placeholder="Enter topic name" />
+	    	</div>
+	        
+	        <div class="form-group">
+  				<label for="inputMessage">訊息</label>
+  				<textarea class="form-control" rows="5" id="inputMessage" name="message" placeholder="Enter message to send"></textarea>
+			</div>
+	        
+	        <button type="submit" class="btn btn-defaule">Submit</button> 
+	        <button type="reset" class="btn btn-default">Reset</button>
+	    </form>
+	</body>
+</html>

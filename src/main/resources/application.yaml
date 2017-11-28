@@ -1,0 +1,20 @@
+server:
+    port: 8080
+    
+spring:
+    data:
+        mongodb:
+            uri: ${MONGO_DB_URI}
+            
+multipart:
+    maxFileSize: 5MB
+    maxRequestSize: 5MB
+
+# ------ 以下為自訂設定 ------
+mail:
+    username: exfantasy7wolves
+    password: ilovebmw
+    
+store:
+    file:
+        path: /Users/tommyyeh/Documents/workspace/TogetherWs/user-files

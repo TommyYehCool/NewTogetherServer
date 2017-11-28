@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+	<div th:include="fragments/js :: jquerys"></div>
+	<div th:include="fragments/js :: bootstrap"></div>
+
+	<head>
+		<title>活動</title>
+  		<object th:include="fragments/header :: common_header" th:remove="tag" ></object>
+	</head>
+
+	<body>
+		<h1>新增活動</h1>
+	    <form action="#" th:action="@{/activity/create-from-web}" th:object="${activity}" method="post">
+	    	<div class="form-group">
+	    		<label for="inputCreateUserId">建立使用者ID</label> 
+	    		<input type="text" class="form-control" id="inputCreateUserId" placeholder="Enter create user ID" th:field="*{createUserId}" />
+	    	</div>
+	    
+	    	<div class="form-group">
+	    		<label for="inputLatitude">緯度</label> 
+	    		<input type="text" class="form-control" id="inputLatitude" placeholder="Enter latitude" th:field="*{latitude}" />
+	    	</div>
+	    	
+	    	<div class="form-group">
+	        	<label for="inputLongitude">經度</label> 
+	        	<input type="text" class="form-control" id="inputLongitude" placeholder="Enter longitude" th:field="*{longitude}" />
+	        </div>
+	        
+	        <div class="form-group">
+	        	<label for="inputName">名稱</label> 
+	        	<input type="text" class="form-control" id="inputName" placeholder="Enter name" th:field="*{name}" />
+	        </div>
+	        
+	        <div class="form-group">
+  				<label for="inputContent">內容</label>
+  				<textarea class="form-control" rows="5" id="inputContent" th:field="*{content}"></textarea>
+			</div>
+	        
+	        <div class="form-group">
+	        	<label for="inputAttendeeNum">人數</label>
+	        	<input type="text" class="form-control" id="inputAttendeeNum" placeholder="Enter number of people" th:field="*{attendeeNum}" />
+	        </div>
+	        
+	        <button type="submit" class="btn btn-defaule">Submit</button> 
+	        <button type="reset" class="btn btn-default">Reset</button>
+	    </form>
+	</body>
+</html>

@@ -1,0 +1,9 @@
+=============================================================================================================
+	This is custom banner, locates at "/resources/banner.txt"
+	
+	reference site:
+		http://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-spring-application.html
+=============================================================================================================
+-- Spring Boot -- ${spring-boot.formatted-version} 
+-- TogetherServer -- ${application.formatted-version}
+

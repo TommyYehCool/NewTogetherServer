@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+	<property name="CHARSET" value="UTF-8" />
+	<property name="PATTERN" value="[%d{yyyy-MM-dd HH:mm:ss.SSS}][%thread][%-5level][%logger{10}] %m%n" />
+
+	<appender name="HEROKU_CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <pattern>${PATTERN}</pattern>
+        </encoder>
+    </appender>
+	
+	<appender name="HEROKU_FILE" class="ch.qos.logback.core.FileAppender">
+        <file>TogetherServer.log</file>
+        <append>true</append>
+        <encoder>
+            <pattern>${PATTERN}</pattern>
+        </encoder>
+    </appender>
+
+	<logger name="com.exfantasy" additivity="false">
+		<level value="DEBUG" />
+		<appender-ref ref="HEROKU_CONSOLE" />
+		<appender-ref ref="HEROKU_FILE" />
+	</logger>
+
+	<root>
+		<level value="INFO" />
+		<appender-ref ref="HEROKU_CONSOLE" />
+		<appender-ref ref="HEROKU_FILE" />
+	</root>
+</configuration>
