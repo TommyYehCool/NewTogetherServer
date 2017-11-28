@@ -68,9 +68,26 @@ public class ActivityController {
 	@ApiOperation(value = "參加活動")
 	@RequestMapping(value = "/join", method = RequestMethod.PUT)
 	@ResponseBody
-	public RespCommon joinActivity(@RequestParam("userId") Long userId, @RequestParam("activityId") Long activityId) {
-		activityService.join(userId, activityId);
+	public RespCommon joinActivity(@RequestParam("activityId") Long activityId, @RequestParam("userId") Long userId) {
+		activityService.join(activityId, userId);
 		return new RespCommon(ResultCode.SUCCESS, "Join activiy succeed");
 	}
 	
+	/**
+	 * <pre>
+	 * 對活動留言
+	 * </pre>
+	 * 
+	 * @param activityId
+	 * @param username
+	 * @param message
+	 * @return
+	 */
+	@ApiOperation(value = "對活動留言")
+	@RequestMapping(value = "/leave-message", method = RequestMethod.PUT)
+	@ResponseBody
+	public RespCommon leaveMessage(@RequestParam("activityId") Long activityId, @RequestParam("username") String username, @RequestParam("message") String message) {
+		activityService.leaveMessage(activityId, username, message);
+		return new RespCommon(ResultCode.SUCCESS, "Leave message succeed");
+	}
 }

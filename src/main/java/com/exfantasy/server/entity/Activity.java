@@ -64,6 +64,6 @@ public class Activity {
     /**
      * 活動的留言
      */
-//	@ApiModelProperty(notes = "活動的留言", required = false)
-//    private List<Message> messages;
+	@ApiModelProperty(notes = "活動的留言", required = false)
+    private List<Message> messages;
 }

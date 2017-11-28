@@ -1,6 +1,8 @@
 package com.exfantasy.server.service;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -9,6 +11,7 @@ import org.springframework.stereotype.Service;
 
 import com.exfantasy.server.cnst.ResultCode;
 import com.exfantasy.server.entity.Activity;
+import com.exfantasy.server.entity.Message;
 import com.exfantasy.server.entity.User;
 import com.exfantasy.server.exception.OperationException;
 import com.exfantasy.server.repo.ActivityRepository;
@@ -21,6 +24,8 @@ public class ActivityService {
 	
 	private final String ACTIVITY_COLLECTION = "activities";
 	
+	private final String MESSAGE_COLLECTION = "messages";
+	
 	@Autowired
 	private CounterService counterService;
 	
@@ -30,6 +35,13 @@ public class ActivityService {
 	@Autowired
 	private ActivityRepository activityRepo;
 
+	/**
+	 * <pre>
+	 * 建立活動
+	 * </pre>
+	 * 
+	 * @param activity
+	 */
 	public void createActivity(Activity activity) {
 		logger.info(">>>>> Prepare to create activity: {}", activity);
 
@@ -45,14 +57,60 @@ public class ActivityService {
 		
 		logger.info(">>>>> Create activity: {} succeed", activity);
 	}
+	
+	/**
+	 * <pre>
+	 * 對活動留言
+	 * </pre>
+	 * 
+	 * @param activityId
+	 * @param userId
+	 * @param message
+	 */
+	public void leaveMessage(Long activityId, String username, String message) {
+		logger.info(">>>>> Prepare to let user with name: <{}> leave message: <{}> to activity with id: <{}>", username, message, activityId);
+		
+		// 判斷想留言的活動是否存在
+		Activity activity = activityRepo.findOne(activityId);
+		if (activity == null) {
+			logger.error("<<<<< Cannot find mapping activity with id: <{}>", activityId);
+			throw new OperationException(ResultCode.ACTIVITY_NOT_FOUND);
+		}
+		logger.info("Found " + activity);
+		
+		// 將活動留言加上
+		Message msg = new Message(counterService.getNextSequence(MESSAGE_COLLECTION), username, message);
 
-	public void join(Long joinUserId, Long activityId) {
-		logger.info(">>>>> Prepare to let user with id: <" + joinUserId + "> join activity with id: <" + activityId + ">");
+		List<Message> messages = activity.getMessages();
+		if (messages == null) {
+			messages = new ArrayList<>();
+			messages.add(msg);
+			activity.setMessages(messages);
+		}
+		else {
+			messages.add(msg);
+		}
+
+		activityRepo.save(activity);
+		
+		logger.info("<<<<< User with name: <{}> leave message: <{}> to activity with id: <{}> succeed", username, message, activityId);
+	}
+
+	/**
+	 * <pre>
+	 * 參加活動
+	 * </pre>
+	 * 
+	 * @param activityId
+	 * @param joinUserId
+	 */
+	public void join(Long activityId, Long joinUserId) {
+		logger.info(">>>>> Prepare to let user with id: <{}> join activity with id: <{}>", joinUserId, activityId);
 		
 		// 判斷想參加的使用者資料是否存在
 		User user = userRepo.findOne(joinUserId);
 		if (user == null) {
-			logger.error("<<<<< Cannot find mapping user with id: <" + joinUserId + ">");
+			logger.error("<<<<< Cannot find mapping user with id: <{}>", joinUserId);
 			throw new OperationException(ResultCode.USER_NOT_FOUND);
 		}
 		logger.info("Found " + user);
@@ -75,10 +133,11 @@ public class ActivityService {
 		// 判斷想參加的使用者是否已參加過此活動
 		Activity joinedActivity = activityRepo.findByActivityIdAndJoinedUserId(activityId, joinUserId);
 		if (joinedActivity != null) {
-			logger.error("<<<<< Cannot join event that joinUserId: <" + joinUserId + "> already joined");
+			logger.error("<<<<< Cannot join event that joinUserId: <{}> already joined", joinUserId);
 			throw new OperationException(ResultCode.CAONNOT_JOIN_ACTIVITY_THAT_ALREADY_JOINED);
 		}
 		
+		// 將活動參與使用者加上
 		activity.getJoinedUsers().add(user);
 		activityRepo.save(activity);
 		
