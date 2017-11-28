@@ -16,7 +16,7 @@ import com.exfantasy.server.vo.response.RespCommon;
 
 /**
  * <pre>
- * ²Î¤@³B²z¨t²Î¨Ò¥~¥Î
+ * çµ±ä¸€è™•ç†ç³»çµ±ä¾‹å¤–ç”¨
  * </pre>
  * 
  * @author tommy.feng
