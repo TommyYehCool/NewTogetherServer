@@ -12,7 +12,7 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 
 @Controller
-@Api(tags = "取得相關頁面 APIs")
+@Api("取得相關頁面 APIs")
 public class PageController {
 
 	/**

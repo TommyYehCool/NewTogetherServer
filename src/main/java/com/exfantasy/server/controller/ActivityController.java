@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.exfantasy.server.cnst.ResultCode;
 import com.exfantasy.server.entity.Activity;
-import com.exfantasy.server.service.ActivityService;
+import com.exfantasy.server.service.activity.ActivityService;
 import com.exfantasy.server.vo.response.RespCommon;
 
 import io.swagger.annotations.Api;
@@ -20,7 +20,7 @@ import io.swagger.annotations.ApiOperation;
 
 @Controller
 @RequestMapping(value = "/activity")
-@Api(tags = "活動相關 APIs")
+@Api("活動相關 APIs")
 public class ActivityController {
 
 	@Autowired

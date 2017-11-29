@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.exfantasy.server.cnst.ResultCode;
 import com.exfantasy.server.entity.User;
-import com.exfantasy.server.service.UserService;
+import com.exfantasy.server.service.user.UserService;
 import com.exfantasy.server.vo.response.RespCommon;
 
 import io.swagger.annotations.Api;
@@ -18,7 +18,7 @@ import io.swagger.annotations.ApiOperation;
 
 @Controller
 @RequestMapping(value = "/user")
-@Api(tags = "使用者相關 APIs")
+@Api("使用者相關 APIs")
 public class UserController {
 
 	@Autowired

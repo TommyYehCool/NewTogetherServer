@@ -1,4 +1,4 @@
-package com.exfantasy.server.service;
+package com.exfantasy.server.service.user;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -9,6 +9,7 @@ import com.exfantasy.server.cnst.ResultCode;
 import com.exfantasy.server.entity.User;
 import com.exfantasy.server.exception.OperationException;
 import com.exfantasy.server.repo.UserRepository;
+import com.exfantasy.server.service.counter.CounterService;
 
 @Service
 public class UserService {

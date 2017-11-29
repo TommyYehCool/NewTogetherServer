@@ -1,4 +1,4 @@
-package com.exfantasy.server.service;
+package com.exfantasy.server.service.mail;
 
 import javax.mail.MessagingException;
 import javax.mail.internet.MimeMessage;
@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 
 import com.exfantasy.server.cnst.ResultCode;
 import com.exfantasy.server.exception.OperationException;
+import com.exfantasy.server.service.user.UserService;
 
 @Service
 public class MailService {

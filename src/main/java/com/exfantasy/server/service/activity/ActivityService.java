@@ -1,4 +1,4 @@
-package com.exfantasy.server.service;
+package com.exfantasy.server.service.activity;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -16,6 +16,8 @@ import com.exfantasy.server.entity.User;
 import com.exfantasy.server.exception.OperationException;
 import com.exfantasy.server.repo.ActivityRepository;
 import com.exfantasy.server.repo.UserRepository;
+import com.exfantasy.server.service.counter.CounterService;
+import com.exfantasy.server.service.user.UserService;
 
 @Service
 public class ActivityService {

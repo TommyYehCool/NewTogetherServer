@@ -5,17 +5,19 @@ spring:
     data:
         mongodb:
             uri: ${MONGO_DB_URI}
-            
-multipart:
-    maxFileSize: 5MB
-    maxRequestSize: 5MB
 
-# ------ 以下為自訂設定 ------
+    # http://stackoverflow.com/questions/37540028/how-to-set-the-max-size-of-upload-file
+    http:
+        multipart:
+            max-file-size: 10MB
+            max-request-size: 10MB
+
+# -------- Mail Config --------
 # https://support.google.com/mail/answer/185833?hl=zh-Hant
 mail:
     username: ${MAIL_USER}
     password: ${MAIL_PASSWORD}
     
-store:
-    file:
-        path: /Users/tommyyeh/Documents/workspace/TogetherWs/user-files
+# -------- Dropbox Access Token --------
+dropbox:
+    accessToken: ${DROPBOX_ACCESS_TOKEN}

@@ -1,6 +1,5 @@
-package com.exfantasy.server.config;
+package com.exfantasy.server.config.resource;
 
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
@@ -13,17 +12,17 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 @Configuration
 public class ResourceConfig extends WebMvcConfigurerAdapter {
 	
-	@Value("${store.file.path}")
-	private String STORE_FILE_PATH;
+//	@Value("${store.file.path}")
+//	private String STORE_FILE_PATH;
 	
 //	@Autowired
 //	private UserManager userManager;
 	
 	@Override
 	public void addResourceHandlers(ResourceHandlerRegistry registry) {
-		if (!STORE_FILE_PATH.endsWith("/")) {
-			STORE_FILE_PATH += "/";
-		}
+//		if (!STORE_FILE_PATH.endsWith("/")) {
+//			STORE_FILE_PATH += "/";
+//		}
 		
 //		UserEntity[] allUsers = userManager.findAllUsers();
 //		

@@ -8,8 +8,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.exfantasy.server.vo.Greeting;
 
+import io.swagger.annotations.Api;
+
 @Controller
-public class GreetingController {
+@Api("測試相關 API")
+public class TestingController {
 
 	@RequestMapping(value = "/greeting", method = RequestMethod.GET)
 	public String greetingForm(Model model) {

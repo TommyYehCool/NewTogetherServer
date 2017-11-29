@@ -1,4 +1,4 @@
-package com.exfantasy.server.config;
+package com.exfantasy.server.config.mvc;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;

@@ -1,4 +1,4 @@
-package com.exfantasy.server.config;
+package com.exfantasy.server.config.swagger;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

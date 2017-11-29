@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.exfantasy.server.cnst.ResultCode;
-import com.exfantasy.server.service.MailService;
+import com.exfantasy.server.service.mail.MailService;
 import com.exfantasy.server.vo.response.RespCommon;
 
 import io.swagger.annotations.Api;
@@ -16,7 +16,7 @@ import io.swagger.annotations.ApiOperation;
 
 @Controller
 @RequestMapping(value = "/mail")
-@Api(tags = "發 Mail 相關 APIs")
+@Api("Mail 相關 APIs")
 public class MailController {
 
 	@Autowired

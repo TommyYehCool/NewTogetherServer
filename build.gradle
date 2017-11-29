@@ -16,6 +16,8 @@ ext {
 	apacheCommonsCompressVersion = '1.13'
 	apacheHttpClientVersion = '4.5.2'
 	
+	dropboxApiVersion = '2.1.1'
+	
 	junitVersion = '4.+'
 }
 
@@ -81,6 +83,9 @@ dependencies {
 	
 	// --------- Apache commons-compress ----------
 	compile "org.apache.commons:commons-compress:${apacheCommonsCompressVersion}"
+	
+	// --------- Dropbox Api ---------
+	compile "com.dropbox.core:dropbox-core-sdk:${dropboxApiVersion}"
 	
 	// --------- JUnit --------- 
     testCompile "junit:junit:${junitVersion}"

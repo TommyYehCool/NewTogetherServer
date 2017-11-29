@@ -1,4 +1,4 @@
-package com.exfantasy.server.service;
+package com.exfantasy.server.service.counter;
 
 import static org.springframework.data.mongodb.core.FindAndModifyOptions.options;
 import static org.springframework.data.mongodb.core.query.Criteria.where;
