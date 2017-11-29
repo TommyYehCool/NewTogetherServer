@@ -58,4 +58,19 @@ public class PageController {
 	public String returnMessagePage(Model model) {
 		return "message";
 	}
+	
+	/**
+	 * <pre>
+	 * 取得發 Email 頁面
+	 * </pre>
+	 * 
+	 * @param model
+	 * @return
+	 */
+	@ApiOperation(value = "取得 Email 頁面")
+	@RequestMapping(value = "/mail", method = RequestMethod.GET)
+	public String returnMailPage(Model model) {
+		return "mail";
+	}
+
 }

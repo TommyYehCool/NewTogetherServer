@@ -31,6 +31,9 @@ public enum ResultCode {
 	/** Code: 3003, Message: 不能參加已參加的活動  */
 	CAONNOT_JOIN_ACTIVITY_THAT_ALREADY_JOINED(3003, "Cannot join activity that already joined"),
 	
+	/** Code: 4001, Message: 發送 Email 失敗 */
+	SEND_MAIL_FAILED(4001, "Send mail failed"), 
+	
 	/** Code: 4444, Message: 無權限操作 */
 	ACCESS_DENIED(4444, "Access is denied"),
 	

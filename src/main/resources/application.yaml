@@ -12,8 +12,8 @@ multipart:
 
 # ------ 以下為自訂設定 ------
 mail:
-    username: exfantasy7wolves
-    password: ilovebmw
+    username: ${MAIL_USER}
+    password: ${MAIL_PASSWORD}
     
 store:
     file:
