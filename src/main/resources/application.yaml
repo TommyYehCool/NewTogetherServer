@@ -11,6 +11,7 @@ multipart:
     maxRequestSize: 5MB
 
 # ------ 以下為自訂設定 ------
+# https://support.google.com/mail/answer/185833?hl=zh-Hant
 mail:
     username: ${MAIL_USER}
     password: ${MAIL_PASSWORD}
