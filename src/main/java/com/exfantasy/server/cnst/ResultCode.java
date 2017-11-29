@@ -34,11 +34,17 @@ public enum ResultCode {
 	/** Code: 4001, Message: 發送 Email 失敗 */
 	SEND_MAIL_FAILED(4001, "Send mail failed"), 
 	
-	/** Code: 4002, Message: 上傳檔案失敗 */
-	UPLOAD_FILE_FAILED(4002, "Upload file failed"),
+	/** Code: 5002, Message: 上傳檔案失敗 */
+	UPLOAD_FILE_FAILED(5002, "Upload file failed"),
 	
-	/** Code: 4003, Message: 檔案為空 */
-	FILE_IS_EMPTY(4003, "File is empty"), 
+	/** Code: 5003, Message: 檔案為空 */
+	FILE_IS_EMPTY(5003, "File is empty"), 
+	
+	/** Code: 5004, Message: 檔案下載失敗 */
+	DOWNLOAD_FILE_FAILED(5004, "Download file failed"), 
+	
+	/** Code: 5005, Message: 列出檔案清單失敗 */
+	LIST_FILE_FAILED(5005, "List file failed"),
 	
 	/** Code: 9001, Message: 無權限操作 */
 	ACCESS_DENIED(9001, "Access is denied"),

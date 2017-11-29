@@ -1,4 +1,4 @@
-package com.exfantasy.server.vo;
+package com.exfantasy.server.vo.model;
 
 public class Greeting {
 

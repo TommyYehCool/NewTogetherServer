@@ -1,6 +1,9 @@
 package com.exfantasy.server.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -14,6 +17,7 @@ import com.exfantasy.server.entity.User;
 import com.exfantasy.server.exception.OperationException;
 import com.exfantasy.server.service.file.FileService;
 import com.exfantasy.server.vo.response.RespCommon;
+import com.exfantasy.server.vo.response.file.ListFileResp;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -40,4 +44,17 @@ public class FileController {
 			throw new OperationException(ResultCode.FILE_IS_EMPTY);
 		}
 	}
+	
+	@RequestMapping(value = "/list", method = RequestMethod.GET)
+	@ApiOperation(value = "檔案列表", notes = "列出雲端空間的檔案", responseContainer = "List", response = ListFileResp.class)
+	public @ResponseBody List<ListFileResp> listFiles(@RequestParam("email") String email) {
+		return fileService.listFiles(email);
+	}
+	
+	@RequestMapping(value = "/download", method = RequestMethod.GET)
+	@ApiOperation(value = "下載檔案", notes = "下載檔案")
+	public ResponseEntity<byte[]> downloadFile(@RequestParam(value = "pathAndName", required = true) String pathAndName) {
+		return fileService.downloadFile(pathAndName);
+	}
+
 }
